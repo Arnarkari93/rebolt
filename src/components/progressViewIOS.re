@@ -3,12 +3,33 @@ external progressViewIOS : ReasonReact.reactClass = "ProgressViewIOS";
 
 let make =
     (
-      ~progress=?,
+      ~progress,
       ~progressImage=?,
       ~progressTintColor=?,
       ~progressViewStyle=?,
       ~trackImage=?,
       ~trackTintColor=?,
+      /* view props */
+      ~accessibilityLabel=?,
+      ~accessible=?,
+      ~hitSlop=?,
+      ~onAccessibilityTap=?,
+      ~onLayout=?,
+      ~onMagicTap=?,
+      ~responderHandlers=?,
+      ~pointerEvents=?,
+      ~removeClippedSubviews=?,
+      ~style=?,
+      ~testID=?,
+      ~accessibilityComponentType=?,
+      ~accessibilityLiveRegion=?,
+      ~collapsable=?,
+      ~importantForAccessibility=?,
+      ~needsOffscreenAlphaCompositing=?,
+      ~renderToHardwareTextureAndroid=?,
+      ~accessibilityTraits=?,
+      ~accessibilityViewIsModal=?,
+      ~shouldRasterizeIOS=?,
     ) =>
   ReasonReact.wrapJsForReason(
     ~reactClass=progressViewIOS,
@@ -16,7 +37,7 @@ let make =
       Props.extendView(
         Js.Undefined.(
           {
-            "progress": fromOption(progress),
+            "progress": progress,
             "progressImage": fromOption(progressImage),
             "progressTintColor": fromOption(progressTintColor),
             "progressViewStyle": fromOption(progressViewStyle),
@@ -24,5 +45,25 @@ let make =
             "trackTintColor": fromOption(trackTintColor),
           }
         ),
+        ~accessibilityLabel?,
+        ~accessible?,
+        ~hitSlop?,
+        ~onAccessibilityTap?,
+        ~onLayout?,
+        ~onMagicTap?,
+        ~responderHandlers?,
+        ~pointerEvents?,
+        ~removeClippedSubviews?,
+        ~style?,
+        ~testID?,
+        ~accessibilityComponentType?,
+        ~accessibilityLiveRegion?,
+        ~collapsable?,
+        ~importantForAccessibility?,
+        ~needsOffscreenAlphaCompositing?,
+        ~renderToHardwareTextureAndroid?,
+        ~accessibilityTraits?,
+        ~accessibilityViewIsModal?,
+        ~shouldRasterizeIOS?,
       ),
   );

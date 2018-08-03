@@ -48,6 +48,15 @@ module ProgressBarAndroid = MakeExample(ProgressBarAndroidExample);
 
 module ViewPagerAndroid = MakeExample(ViewPagerAndroid);
 
+module ImagePickerIOS = MakeExample(ImagePickerIOSExample);
+module PermissionsAndroid = MakeExample(PermissionsAndroidExample);
+
+module Settings = MakeExample(SettingsExample);
+
+module ImageStore = MakeExample(ImageStoreExample);
+
+module ActivityIndicator = MakeExample(ActivityIndicatorExample);
+
 let components: array(item) = [|
   Button.item("ButtonExample"),
   View.item("ViewExample"),
@@ -59,4 +68,9 @@ let components: array(item) = [|
   TouchableNativeFeedback.item("TouchableNativeFeedback"),
   ProgressBarAndroid.item("ProgressBarAndroid"),
   ViewPagerAndroid.item("ViewPagerAndroid"),
+  ImagePickerIOS.item("ImagePickerIOSExample"),
+  PermissionsAndroid.item("PermissionsAndroid"),
+  Settings.item("SettingsExample"),
+  ImageStore.item("ImageStoreExample"),
+  ActivityIndicator.item("ActivityIndicatorExample"),
 |];

@@ -1,5 +1,21 @@
 [@bs.module "react-native"] external view : ReasonReact.reactClass = "WebView";
 
+module EventTypes = {
+  [@bs.deriving abstract]
+  type t = {
+    [@bs.optional]
+    url: string,
+    [@bs.optional]
+    title: string,
+    [@bs.optional]
+    loading: bool,
+    [@bs.optional]
+    canGoBack: bool,
+    [@bs.optional]
+    canGoForward: bool,
+  };
+};
+
 type iOSLoadRequestEvent = {
   .
   "target": int,
@@ -27,13 +43,7 @@ external sourceUri :
   "";
 
 [@bs.obj]
-external sourceHtml :
-  (
-    ~html: string=?,
-    ~baseUrl: string=?,
-    unit
-  ) =>
-  source =
+external sourceHtml : (~html: string=?, ~baseUrl: string=?, unit) => source =
   "";
 
 let source = sourceUri;

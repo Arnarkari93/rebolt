@@ -2,6 +2,8 @@ module type TextComponent = {
   let make:
     (
       ~accessible: bool=?,
+      ~accessibilityHint: string=?,
+      ~accessibilityLabel: string=?,
       ~allowFontScaling: bool=?,
       ~ellipsizeMode: [ | `clip | `head | `middle | `tail]=?,
       ~numberOfLines: int=?,
@@ -31,6 +33,8 @@ module CreateComponent = (Impl: View.Impl) : TextComponent => {
   let make =
       (
         ~accessible=?,
+        ~accessibilityHint=?,
+        ~accessibilityLabel=?,
         ~allowFontScaling=?,
         ~ellipsizeMode=?,
         ~numberOfLines=?,
@@ -56,6 +60,8 @@ module CreateComponent = (Impl: View.Impl) : TextComponent => {
           {
             "accessible":
               fromOption(UtilsRN.optBoolToOptJsBoolean(accessible)),
+            "accessibilityHint": fromOption(accessibilityHint),
+            "accessibilityLabel": fromOption(accessibilityLabel),
             "allowFontScaling":
               fromOption(UtilsRN.optBoolToOptJsBoolean(allowFontScaling)),
             "ellipsizeMode":

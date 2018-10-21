@@ -2,6 +2,8 @@ module type TextComponent = {
   let make:
     (
       ~accessible: bool=?,
+      ~accessibilityHint: string=?,
+      ~accessibilityLabel: string=?,
       ~allowFontScaling: bool=?,
       ~ellipsizeMode: [ | `clip | `head | `middle | `tail]=?,
       ~numberOfLines: int=?,
@@ -20,7 +22,11 @@ module type TextComponent = {
       ~value: string=?,
       array(ReasonReact.reactElement)
     ) =>
-    ReasonReact.component(ReasonReact.stateless, ReasonReact.noRetainedProps, unit);
+    ReasonReact.component(
+      ReasonReact.stateless,
+      ReasonReact.noRetainedProps,
+      unit,
+    );
 };
 
 module CreateComponent: (Impl: View.Impl) => TextComponent;

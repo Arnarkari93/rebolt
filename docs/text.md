@@ -10,6 +10,18 @@ title: Text
 accessible: bool=?
 ```
 
+### accessibilityHint
+
+```reason
+accessibilityHint: string=?
+```
+
+### accessibilityLabel
+
+```reason
+accessibilityLabel: string=?
+```
+
 ### allowFontScaling
 
 ```reason
